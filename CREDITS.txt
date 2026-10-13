@@ -1,0 +1,19 @@
+p-margherita: https://unsplash.com/photos/1574071318508-1cdbab80d002
+p-diavola: https://unsplash.com/photos/1788272983172-dab082ca5936
+p-pomodorini: https://unsplash.com/photos/1600028068383-ea11a7a101f3
+p-stracciatella: https://unsplash.com/photos/1593560708920-61dd98c46a4e
+p-ortolana: https://unsplash.com/photos/1621538997517-58ce53933faa
+p-salsiccia: https://unsplash.com/photos/1784462354366-19afddb9a746
+p-bianca: https://unsplash.com/photos/1622880833523-7cf1c0bd4296
+i-dough: https://unsplash.com/photos/1619710282877-638d7ee1e45d
+i-tomato: https://unsplash.com/photos/1788512108156-9079d5996b00
+i-mozzarella: https://unsplash.com/photos/1633253037246-12bb11ff545a
+i-basil: https://unsplash.com/photos/1629157247277-48f870757026
+i-oil: https://unsplash.com/photos/1621958180509-74e9a29b3758
+i-fire: https://unsplash.com/photos/1706011465964-7a226eea129a
+s-pizzaiolo: https://unsplash.com/photos/1558138838-76294be30005
+s-oven: https://unsplash.com/photos/1564936281403-f92f66f89ee0
+s-balls: https://unsplash.com/photos/1638981367753-e6e0f6371744
+s-hands: https://unsplash.com/photos/1686998424051-e072dfe0e564
+room: https://unsplash.com/photos/1685397067025-d293a18099ba
+oven-room: https://unsplash.com/photos/1489564239502-7a532064e1c2dough-start: https://unsplash.com/photos/1598634549802-dcc558705f19
