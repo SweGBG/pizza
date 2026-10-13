@@ -81,8 +81,8 @@ h2 { font-size: clamp(2.4rem, 6vw, 5.2rem); }
   box-shadow: 0 1px 0 rgba(243, 235, 221, .08);
 }
 .hdr-brand { display: flex; align-items: center; gap: .7rem; text-decoration: none; }
-.hdr-brand img { width: 42px; border-radius: 50%; }
-.hdr-brand span { font: 500 1.18rem/1 var(--display); white-space: nowrap; letter-spacing: -.01em; }
+.hdr-brand img { width: 52px; border-radius: 50%; }
+.hdr-brand span { font: 500 1.28rem/1 var(--display); white-space: nowrap; letter-spacing: -.01em; }
 .hdr-brand i { color: var(--ember); }
 .hdr-nav { display: flex; align-items: center; gap: clamp(1rem, 2.4vw, 2.4rem); }
 .hdr-nav a:not(.btn) { text-decoration: none; font-weight: 500; font-size: .92rem; position: relative; padding: .3em 0; opacity: .85; transition: opacity .3s; }
@@ -128,7 +128,7 @@ h2 { font-size: clamp(2.4rem, 6vw, 5.2rem); }
 }
 .film-intro { width: min(46rem, 56vw); }
 .film-emblem {
-  width: 104px; margin-bottom: 1.6rem; border-radius: 50%;
+  width: clamp(130px, 11vw, 168px); margin-bottom: 1.6rem; border-radius: 50%;
   -webkit-mask: radial-gradient(50% 52% at 50% 50%, #000 66%, transparent 84%); mask: radial-gradient(50% 52% at 50% 50%, #000 66%, transparent 84%);
   animation: rise 1.2s .2s var(--ease) both;
 }
@@ -322,7 +322,7 @@ h2 { font-size: clamp(2.4rem, 6vw, 5.2rem); }
 .footer { padding: 2.6rem 0; border-top: 1px solid rgba(243, 235, 221, .08); background: #0a0908; }
 .footer-inner { display: flex; justify-content: space-between; align-items: center; gap: 1.5rem; flex-wrap: wrap; }
 .footer-brand { display: flex; align-items: center; gap: 1rem; }
-.footer-brand img { width: 52px; border-radius: 50%; }
+.footer-brand img { width: 64px; border-radius: 50%; }
 .footer-brand p { margin: 0; font: 500 1.3rem/1.2 var(--display); }
 .footer-brand i { color: var(--ember); }
 .footer-brand small { display: block; font: 400 .85rem var(--body); color: var(--muted); }
@@ -360,7 +360,7 @@ h2 { font-size: clamp(2.4rem, 6vw, 5.2rem); }
   .film-media { transform-origin: 50% 50%; }
   .film-shade { background: linear-gradient(180deg, rgba(14, 12, 11, .7), transparent 20%, transparent 40%, rgba(14, 12, 11, .92) 78%); }
   .film-intro, .chapter { top: auto; bottom: 7%; translate: 0 0; left: var(--gutter); right: var(--gutter); width: auto; }
-  .film-emblem { width: 76px; margin-bottom: 1rem; }
+  .film-emblem { width: 108px; margin-bottom: 1rem; }
   .film-title { font-size: clamp(3.6rem, 17vw, 5.4rem); }
   .film-lead { margin: 1rem 0 1.4rem; font-size: 1rem; }
   .film-scroll { display: none; }
@@ -378,6 +378,7 @@ h2 { font-size: clamp(2.4rem, 6vw, 5.2rem); }
   body { font-size: 16px; }
   .hdr-tools .status { display: none; }
   .hdr-brand span { font-size: 1.02rem; }
+  .hdr-brand img { width: 44px; }
   .booking-form .row { grid-template-columns: 1fr 1fr; }
   .booking-form .row label:nth-child(2) { grid-column: 1 / -1; order: -1; }
   .bento { grid-auto-rows: 170px; }
