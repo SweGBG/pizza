@@ -1,0 +1,49 @@
+/* CRiNTRO Loader: the oven catches, the emblem lights up, the rule bakes from dough to ember = real loading. */
+.loader { position: fixed; inset: 0; z-index: 10000; display: grid; place-items: center; background:
+    radial-gradient(70% 50% at 50% 108%, rgba(255, 138, 61, .2), rgba(226, 65, 43, .06) 45%, transparent 72%), var(--coal);
+  transition: opacity .8s var(--ease), transform .9s var(--ease), visibility 0s .9s; }
+.out { opacity: 0; transform: scale(1.03); visibility: hidden; pointer-events: none; }
+.inner { display: grid; justify-items: center; gap: 1.05rem; padding: 0 var(--gutter); text-align: center; }
+
+/* The emblem lights up like the oven mouth: dark → overexposed warm flash → settled, blur → sharp */
+.emblemWrap { position: relative; width: clamp(150px, 16vw, 210px); aspect-ratio: 719 / 695; margin-bottom: .4rem; }
+.glow { position: absolute; inset: -38%; border-radius: 50%; opacity: 0;
+  background: radial-gradient(circle, rgba(255, 138, 61, .42), rgba(226, 65, 43, .14) 42%, transparent 68%);
+  animation: glowIn 1.6s .1s var(--ease) forwards; }
+.emblem { position: relative; display: block; width: 100%; height: auto; border-radius: 50%; opacity: 0;
+  -webkit-mask: radial-gradient(50% 52% at 50% 50%, #000 66%, transparent 84%); mask: radial-gradient(50% 52% at 50% 50%, #000 66%, transparent 84%);
+  animation: catch 1.3s .1s var(--ease) forwards; }
+.emblem + .emblem { position: absolute; inset: 0; }
+.sharp { animation: none; opacity: 0; transition: opacity .6s var(--ease); }
+.sharp.on { opacity: 1; }
+@keyframes catch {
+  0% { opacity: 0; transform: scale(.88); filter: blur(14px) brightness(.25) saturate(.4); }
+  45% { opacity: 1; filter: blur(3px) brightness(1.55) saturate(1.3); }
+  100% { opacity: 1; transform: none; filter: none; }
+}
+@keyframes glowIn { 0% { opacity: 0; transform: scale(.6); } 45% { opacity: 1; } 100% { opacity: .65; transform: none; } }
+
+.word { font-family: var(--display); font-size: clamp(1.9rem, 6.4vw, 3.1rem); line-height: 1; letter-spacing: -.03em; color: var(--cream); }
+.w1, .w2 { display: inline-block; opacity: 0; transform: translateY(.3em); animation: rise .9s var(--ease) forwards; }
+.w1 { font-weight: 600; animation-delay: .45s; }
+.w2 { font-style: italic; font-weight: 400; color: var(--ember); animation-delay: .6s; }
+@keyframes rise { to { opacity: 1; transform: none; } }
+
+/* The rule bakes: dough-cream → golden crust → ember → tomato red, with a little flame at the tip */
+.track { container-type: inline-size; position: relative; width: min(15rem, 60vw); height: 3px; border-radius: 3px; background: rgba(243, 235, 221, .09); }
+.fill { position: absolute; inset: 0; border-radius: inherit; transform: scaleX(0); transform-origin: 0 50%; will-change: transform;
+  background: linear-gradient(90deg, #efe0c2, #e7b35a 35%, var(--ember) 68%, var(--red));
+  box-shadow: 0 0 12px rgba(255, 138, 61, .5); }
+.tip { position: absolute; left: -6px; top: 50%; width: 12px; height: 12px; margin-top: -7px; opacity: 0; will-change: transform; transition: opacity .3s;
+  border-radius: 50% 50% 50% 50% / 62% 62% 38% 38%;
+  background: radial-gradient(circle at 50% 62%, #fff4dc 0 26%, rgba(255, 176, 90, .95) 42%, rgba(226, 65, 43, 0) 74%); }
+/* still loading on a slow line: the flame flickers instead of freezing */
+.wait .tip { animation: flicker .9s ease-in-out infinite; }
+.wait .fill { animation: heat 1.6s ease-in-out infinite; }
+@keyframes flicker { 30% { scale: 1.5 1.9; } 60% { scale: 1.2 1.4; filter: brightness(1.3); } }
+@keyframes heat { 50% { box-shadow: 0 0 22px rgba(255, 138, 61, .85); } }
+
+.sub { font-size: .74rem; letter-spacing: .24em; text-transform: uppercase; font-weight: 600; color: var(--muted); opacity: 0; animation: fade .8s 1s var(--ease) forwards; }
+@keyframes fade { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+
+@media (prefers-reduced-motion: reduce) { .loader { display: none; } }

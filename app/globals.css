@@ -370,6 +370,8 @@ h2 { font-size: clamp(2.4rem, 6vw, 5.2rem); }
   .chapter-nav button { flex: 1; opacity: 1; }
   .chapter-nav .seg { width: 100%; height: 3px; }
   .chapter-nav .seg i { transform-origin: left; transform: scaleX(var(--f)); }
+  /* the text layers fade without blur on phones, so only opacity/transform need their own layer */
+  .film-intro, .chapter { will-change: opacity, transform; }
   .hdr.scrolled { -webkit-backdrop-filter: none; backdrop-filter: none; background: rgba(14, 12, 11, .96); }
   .booking-form { -webkit-backdrop-filter: none; backdrop-filter: none; background: var(--coal-2); }
   .menu-head { flex-direction: column; align-items: start; gap: 1rem; }
@@ -395,3 +397,8 @@ h2 { font-size: clamp(2.4rem, 6vw, 5.2rem); }
   .manifesto-text .w { color: var(--cream); }
   html { scroll-behavior: auto; }
 }
+
+/* CRiNTRO Loader: while the loader is up, the hero's entrance waits and the page holds still */
+html.crintro-wait { overflow: hidden; }
+html.crintro-wait [data-crintro-hold], html.crintro-wait [data-crintro-hold] * { animation-play-state: paused !important; }
+@media (prefers-reduced-motion: reduce) { html.crintro-wait { overflow: auto; } }
